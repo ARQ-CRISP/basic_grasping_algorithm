@@ -1,0 +1,4 @@
+sensor_msgs/PointCloud2 input
+---
+int8 outcome
+geometry_msgs/PoseStamped returned_object
