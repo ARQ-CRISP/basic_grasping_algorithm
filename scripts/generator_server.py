@@ -25,9 +25,9 @@ def ros_pointcloud2_to_pcl(ros_msg):
     number_points = numpified.shape[0]
     # Initialize and fill in a numpy array (not a structured one as returned by ros_numpy)
     points = np.zeros((number_points, 3), dtype=np.float32)
-    points[:, 0] = np.resize(numpified["x"], height)
-    points[:, 1] = np.resize(numpified["y"], height)
-    points[:, 2] = np.resize(numpified["z"], height)
+    points[:, 0] = np.resize(numpified["x"], number_points)
+    points[:, 1] = np.resize(numpified["y"], number_points)
+    points[:, 2] = np.resize(numpified["z"], number_points)
     # Initialize the PCL PointCloud from the numpy array
     pcl_pc = pcl.PointCloud(points)
     return pcl_pc
